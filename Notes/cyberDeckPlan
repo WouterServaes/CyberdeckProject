@@ -1,0 +1,17 @@
+
+Cyberdeck Plan
+-----------------
+
+
+Use the led matrix framework plan to incorporate display devices that display info like:
+	- system information
+	- network information
+	- information from other devices (eg work with Pi HAT and other sensors)
+
+Add Modbus and mbus readout functionality through gpi
+
+
+
+
+About GPIO things:
+	it might be possible to share gpio pins (like I2C pins)

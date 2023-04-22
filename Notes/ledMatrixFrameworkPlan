@@ -1,0 +1,39 @@
+
+Serial Device Framework Plan
+--------------------------------
+
+
+----- Raspberry pi LED 8x8 Matrix framework 
+	based on the luma.core API
+
+
+
+C++ Framework able to maintain specific objects (matrix, display, ...).
+Each object is able to run a python script on a different thread.
+
+Python scripts used because ease of use with the hardware devices
+C++ used because it's what I know
+
+-> How to interrupt the for loops in the python scripts?
+	-> Use python script global variable, and only run the script on a different thread or subprocess
+	-> Make while loop of python read the cout from the c++ thread, c++ can write "end" to it
+
+		||
+		||
+		||
+	       \  /
+		\/
+	1) Get the process ID of the python script:  ps ax | grep testLedMatrix
+	2) Signal SIGUSR1 to this ID:  kill -n SIGUSR1 <id>
+	3) Handle SIGUSR1 in the python script to stop the loop
+
+
+
+why this framework:
+	- being able to create complex application without luma.core and other device code.
+	- this drawing code can be generalized anyway
+	- good base for future devices (other led displays)
+
+
+
+

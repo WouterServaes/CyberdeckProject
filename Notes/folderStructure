@@ -1,0 +1,39 @@
+
+
+Folder Structure
+--------------------
+
+Folders: UpperCamelCase
+		-> 
+Files: UpperCamelCase_0X.
+
+> LedInterfaceProject/
+	> Libraries/
+		> Python/
+		> Cpp/
+	> PythonScripts/
+		> <ProjectName.py>
+		> <ProjectName_SpecificFunctionality.py>
+	> Projects/
+		> Common/
+			> Source/
+				> Include/
+					> <FileName.h>
+				> <FileName.cpp>
+		> <ProjectName>/
+			> Source/
+				> Include/
+		<CMakeLists.txt>
+		<main.cpp>
+	> Build/
+	> Notes/			
+	<CMakeLists.txt>
+		
+
+
+
+
+
+
+
+
