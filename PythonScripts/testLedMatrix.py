@@ -7,6 +7,9 @@ import random
 import time
 import signal
 
+portId = 0;
+deviceId = 0;
+
 MATRIX_WIDTH = 8
 MATRIX_HEIGHT = 8
 CASCADED = None
@@ -15,7 +18,7 @@ BLOCK_ORIENTATION = 0
 BLOCKS_IN_REVERSE = False
 CONTRAST = 112
 
-serial = spi(port=0, device=0, gpio=noop())
+serial = spi(port=portId, device=deviceId, gpio=noop())
 device = max7219(serial, MATRIX_WIDTH, MATRIX_HEIGHT, CASCADED, ROTATE, BLOCK_ORIENTATION, BLOCKS_IN_REVERSE, CONTRAST)
 
 line_start = (0,0)
