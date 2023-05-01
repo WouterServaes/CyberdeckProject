@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-05-01T15:37:49.117Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/112.0" etag="er2agsTOYMcVH4JMSNBZ" version="21.2.3" type="github" pages="3">
+<mxfile host="app.diagrams.net" modified="2023-05-01T20:17:44.268Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/112.0" etag="YtUkXxhOf6cyu0QURaDR" version="21.2.3" type="github" pages="3">
   <diagram name="Arch_Draft_1" id="S_uM91Xfsd7DyZV0edvE">
     <mxGraphModel dx="1217" dy="713" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -293,14 +293,14 @@
     </mxGraphModel>
   </diagram>
   <diagram id="Y6OEttpl3avurAEQQeT3" name="UML_Draft_2">
-    <mxGraphModel dx="1739" dy="1019" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2000" pageHeight="2000" math="0" shadow="0">
+    <mxGraphModel dx="1014" dy="594" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2000" pageHeight="2000" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <mxCell id="P5k6exfduH83FtMq4Gyp-32" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="P5k6exfduH83FtMq4Gyp-1" target="P5k6exfduH83FtMq4Gyp-2" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="P5k6exfduH83FtMq4Gyp-1" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;CyberdeckApp&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- m_pProcessHandlers: unordered_map&amp;lt;string, unique_ptr&amp;lt;ProcessHandler&amp;gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- m_pConfig: shared_ptr&amp;lt;Config&amp;gt;&lt;br&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ Run(): void&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ End(): void&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ Start(): void&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ SignalProcess(const string&amp;amp; name): bool&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ Config(): * const Config&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- SignalHandler(): void&lt;/p&gt;&lt;hr&gt;&amp;nbsp;main(int argc, char** argv): void&lt;br&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;br&gt;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;whiteSpace=wrap;" parent="1" vertex="1">
+        <mxCell id="P5k6exfduH83FtMq4Gyp-1" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;CyberdeckApp&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- m_pProcessHandlers: unordered_map&amp;lt;string, unique_ptr&amp;lt;ProcessHandler&amp;gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- m_pConfig: shared_ptr&amp;lt;Config&amp;gt;&lt;br&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ Run(): void&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ End(): void&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ Start(): void&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ SignalProcess(const string&amp;amp; name): bool&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ Config(): * const Config&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- SignalHandler(): void&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- CreateProcesses(): void&lt;br&gt;&lt;/p&gt;&lt;hr&gt;&amp;nbsp;main(int argc, char** argv): void&lt;br&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;br&gt;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;whiteSpace=wrap;" parent="1" vertex="1">
           <mxGeometry x="190" y="70" width="290" height="240" as="geometry" />
         </mxCell>
         <mxCell id="P5k6exfduH83FtMq4Gyp-2" value="ProcessHandler" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
@@ -369,13 +369,13 @@
         <mxCell id="P5k6exfduH83FtMq4Gyp-36" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="P5k6exfduH83FtMq4Gyp-18" target="P5k6exfduH83FtMq4Gyp-12" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="F6ZRDP8oeWjW6RFUue4V-3" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;container=1;" vertex="1" parent="1">
+        <mxCell id="F6ZRDP8oeWjW6RFUue4V-3" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;container=1;" parent="1" vertex="1">
           <mxGeometry x="280" y="550" width="450" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="F6ZRDP8oeWjW6RFUue4V-1" value="&lt;div&gt;PowerButtonProcess&lt;/div&gt;" style="html=1;whiteSpace=wrap;" vertex="1" parent="F6ZRDP8oeWjW6RFUue4V-3">
+        <mxCell id="F6ZRDP8oeWjW6RFUue4V-1" value="&lt;div&gt;PowerButtonProcess&lt;/div&gt;" style="html=1;whiteSpace=wrap;" parent="F6ZRDP8oeWjW6RFUue4V-3" vertex="1">
           <mxGeometry x="10" y="7" width="140" height="46" as="geometry" />
         </mxCell>
-        <mxCell id="F6ZRDP8oeWjW6RFUue4V-2" value="LedMatrixProcess" style="html=1;whiteSpace=wrap;" vertex="1" parent="F6ZRDP8oeWjW6RFUue4V-3">
+        <mxCell id="F6ZRDP8oeWjW6RFUue4V-2" value="LedMatrixProcess" style="html=1;whiteSpace=wrap;" parent="F6ZRDP8oeWjW6RFUue4V-3" vertex="1">
           <mxGeometry x="155" y="7" width="140" height="46" as="geometry" />
         </mxCell>
       </root>
