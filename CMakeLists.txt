@@ -25,6 +25,7 @@ cmake_print_variables(LedInterfaceFramework_SOURCES LedInterfaceFramework_HEADER
 add_executable(${PROJECT_NAME} ${LedInterfaceFramework_SOURCES})
 target_include_directories(${PROJECT_NAME} PRIVATE ${LedInterfaceFramework_INCLUDE_DIRS})
 target_include_directories(${PROJECT_NAME} PRIVATE ${Python3_INCLUDE_DIRS})
+target_include_directories(${PROJECT_NAME} PRIVATE ${PROJECT_SOURCE_DIR}/Libraries)
 target_link_directories(${PROJECT_NAME} PRIVATE ${Python3_LIBRARY_DIRS})
 target_link_libraries(${PROJECT_NAME} PRIVATE ${Python3_LIBRARIES})
 
