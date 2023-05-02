@@ -5,7 +5,7 @@
 
 Config::Config() {}
 
-Config::Config(const std::string& name) { OpenFile(name); }
+Config::Config(const std::string &name) { OpenFile(name); }
 
 std::shared<nlohmann::json> Config::GetJson() { return m_pJson; }
 
@@ -15,7 +15,8 @@ bool Config::LoadFile() {}
 
 bool Config::IsValid() { return nlohmann::json::accept(m_pJson.get()); }
 
-void Config::OpenFile(const std::string& fileName) {
+void Config::OpenFile(const std::string &fileName)
+{
   // Remove existing Json if possible
   if (m_pJson != nullptr) {
     if (m_pJson.unique()) {
@@ -34,8 +35,11 @@ void Config::OpenFile(const std::string& fileName) {
               << std::endl;
   } else
     try {
-      { m_pJson = nlohmann::parse(f); }
-      catch (nlohmann::json::parse_error& e) {
+      {
+        m_pJson = nlohmann::parse(f);
+      }
+      catch (nlohmann::json::parse_error &e)
+      {
         std::cout << "Config::OpenFile: " << e.what() << std::endl;
       }
     }
