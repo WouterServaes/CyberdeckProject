@@ -57,8 +57,7 @@ void Config::OpenFile(const std::string &fileName)
 void Config::CloseFile()
 {
   if (m_pConfigFile != NULL) {
-    fclose(m_pConfigFile);
-    if (m_pConfigFile != NULL) {
+    if (0 != fclose(m_pConfigFile)) {
       std::cout << "unable to close config file" << std::endl;
     }
   }
