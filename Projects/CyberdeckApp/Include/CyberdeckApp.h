@@ -3,10 +3,11 @@
 //
 //-----------------------
 
+#include "PythonHandler.h"
 #include <memory>
 #include <string>
+#include <thread>
 #include <unordered_map>
-
 class Config;
 class CyberdeckApp final
 {
@@ -18,9 +19,10 @@ public:
 private:
   void Start();
   void End();
-  void SignalHandler(int sig);
+  static void SignalHandler(int sig);
   void CreateProcesses();
-  std::unordered_map<std::string, std::unique_ptr<ProcessHandler>>
-    m_ProcessHandlers;
-  const std::shared_ptr<Config> m_pConfig;
+  std::unordered_map<std::string, std::unique_ptr<PythonHandler>>
+    m_PythonHandlers;
+  std::shared_ptr<Config> m_pConfig;
+  static std::atomic<bool> m_IsRunning;
 };
