@@ -14,7 +14,16 @@ Each object is able to run a python script on a different thread.
 Python scripts used because ease of use with the hardware devices
 C++ used because it's what I know
 
+json configuration file used to share data between c++ and python.
+
 -> How to interrupt the for loops in the python scripts?
+NEW:
+run python script on different thread, python script has for loop and checks for a .AppName file in 
+build dir. Py exits when .AppName file does not exist. Main program can remove .AppName file to end the script. .AppName file can be added to build folder to make apps run on startup. Do not open .AppName file, just check if it exists. 
+
+  More: Store settings in file, and change the name to .AppName.Active. file can then be used to store specific app data and be checked for app activation. (This would cause more problems, just have different settings file to ensure good i; changing file name instead of removing the file might be more efficient?)
+
+OLD:
 	-> Use python script global variable, and only run the script on a different thread or subprocess
 	-> Make while loop of python read the cout from the c++ thread, c++ can write "end" to it
 
