@@ -3,8 +3,7 @@
 // ----------------------------------
 #include <Python.h>
 
-#include "Config.h"
-#include "PythonHandler.h"
+#include "CyberdeckApp.h"
 #include <chrono>
 #include <thread>
 
@@ -15,14 +14,9 @@ void ExitPython();
 int main(int argc, char **argv)
 {
   InitPython();
-  std::shared_ptr<Config> config{};
-  config = std::make_shared<Config>(Config());
-  PythonHandler pythonHandler{PythonHandler("testLedMatrix", config)};
-  pythonHandler.Start();
 
-  std::this_thread::sleep_for(std::chrono::seconds(25));
-
-  pythonHandler.End();
+  CyberdeckApp app{CyberdeckApp()};
+  app.Run();
 
   ExitPython();
   return 0;
