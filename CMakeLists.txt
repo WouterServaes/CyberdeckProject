@@ -11,6 +11,7 @@ file (GLOB_RECURSE LedInterfaceFramework_SOURCES CONFIGURE_DEPENDS "Projects/*.c
 file (GLOB_RECURSE LedInterfaceFramework_HEADERS CONFIGURE_DEPENDS ${PROJECT_SOURCE_DIR} "Projects/*/*.h")
 
 file (COPY PythonScripts DESTINATION ${CMAKE_BINARY_DIR})	
+file (COPY ConfigFiles DESTINATION ${CMAKE_BINARY_DIR})
 
 # Finds all header file folders
 set (LedInterfaceFramework_INCLUDE_DIRS "")
@@ -22,7 +23,7 @@ list (REMOVE_DUPLICATES LedInterfaceFramework_INCLUDE_DIRS)
 
 find_package(Python3 REQUIRED COMPONENTS Interpreter Development)
 
-cmake_print_variables(LedInterfaceFramework_SOURCES LedInterfaceFramework_HEADERS LedInterfaceFramework_INCLUDE_DIRS)
+#cmake_print_variables(LedInterfaceFramework_SOURCES LedInterfaceFramework_HEADERS LedInterfaceFramework_INCLUDE_DIRS)
 
 add_executable(${PROJECT_NAME} ${LedInterfaceFramework_SOURCES})
 target_include_directories(${PROJECT_NAME} PRIVATE ${LedInterfaceFramework_INCLUDE_DIRS})
