@@ -4,6 +4,8 @@ include(CMakePrintHelpers)
 project(LedInterfaceFramework CXX)
 
 set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_BUILD_TYPE Debug)
+set(CMAKE_CXX_FLAGS  "${CMAKE_CXX_FLAGS} -pthread")
 
 file (GLOB_RECURSE LedInterfaceFramework_SOURCES CONFIGURE_DEPENDS "Projects/*.cpp")
 file (GLOB_RECURSE LedInterfaceFramework_HEADERS CONFIGURE_DEPENDS ${PROJECT_SOURCE_DIR} "Projects/*/*.h")
