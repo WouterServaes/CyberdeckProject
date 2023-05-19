@@ -5,11 +5,10 @@ from luma.led_matrix.device import max7219
 from PIL import ImageFont
 import random
 import time
-import signal
+import os.path
 
 portId = 0;
 deviceId = 0;
-
 MATRIX_WIDTH = 8
 MATRIX_HEIGHT = 8
 CASCADED = None
@@ -17,7 +16,6 @@ ROTATE = 0
 BLOCK_ORIENTATION = 0
 BLOCKS_IN_REVERSE = False
 CONTRAST = 112
-
 serial = spi(port=portId, device=deviceId, gpio=noop())
 device = max7219(serial, MATRIX_WIDTH, MATRIX_HEIGHT, CASCADED, ROTATE, BLOCK_ORIENTATION, BLOCKS_IN_REVERSE, CONTRAST)
 
@@ -29,13 +27,6 @@ for i in range(MATRIX_WIDTH):
 
 time_step = .15
 current = time.time()
-go = True
-
-def receivedSignal(signalNumber, frame):
-    print("received ", signalNumber);
-    global go
-    go = False
-    return
 
 def changeLines():
     lines.clear()
@@ -45,18 +36,15 @@ def changeLines():
         lines.append((line_start, line_end))
     return lines
 
-signal.signal(signal.SIGUSR1, receivedSignal)
+def canBeActive(processName):
+    return os.path.isfile(os.path.abspath("." + processName))
 
-try:
-    while go:
-        target_time = current + time_step
-        if time.time() >= target_time:
-            current = time.time()
-            lines = changeLines()
+while canBeActive("testLedMatrix"):
+    target_time = current + time_step
+    if time.time() >= target_time:
+        current = time.time()
+        lines = changeLines()
 
-        with canvas(device) as draw:
-            for line in lines:
-                draw.line(line, width=1, fill="red")
-except KeyboardInterrupt:
-    device.cleanup()
-    print("stopped")
+    with canvas(device) as draw:
+        for line in lines:
+            draw.line(line, width=1, fill="red")

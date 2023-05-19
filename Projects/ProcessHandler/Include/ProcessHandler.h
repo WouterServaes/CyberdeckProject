@@ -13,20 +13,23 @@ class ProcessHandler
 {
 public:
   ProcessHandler(const std::string &processName,
-                 std::shared_ptr<Config> &pConfig);
+                 std::shared_ptr<Config> pConfig);
   ProcessHandler() = delete;
-  void StartProcess() = 0;
-  void EndProcess() = 0;
+  virtual ~ProcessHandler();
+  void Start();
+  void End();
   const std::string &GetName();
   bool IsProcessActive();
 
 protected:
-  void ApplyConfigItems() = 0;
-  void RemoveActiveFile();
+  virtual void ApplyConfigItems() = 0;
+  virtual void StartProcess() = 0;
+  virtual void EndProcess();
   std::thread m_Thread;
   std::shared_ptr<Config> m_pConfig;
 
 private:
+  void RemoveActiveFile();
   void CreateActiveFile();
   bool IsProcessActive(const std::filesystem::path &pathToFile);
   std::string GetActiveFileName();
