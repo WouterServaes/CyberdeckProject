@@ -3,28 +3,33 @@
 // ----------------------------------
 #include <Python.h>
 
-#include "SerialDevice.h"
+#include "Config.h"
+#include "PythonHandler.h"
+#include <chrono>
+#include <thread>
 
 void InitPython();
 void ExitPython();
 // PyThreadState* m_PyMainThreadState;
 
-int main(int argc, char** argv) {
+int main(int argc, char **argv)
+{
   InitPython();
+  std::shared_ptr<Config> config{};
+  config = std::make_shared<Config>(Config());
+  PythonHandler pythonHandler{PythonHandler("testLedMatrix", config)};
+  pythonHandler.Start();
 
-  SerialDevice::SerialDeviceSettings settings;
-  settings.name = "LedMatrix Device";
-  settings.portId = 1;
-  settings.portId = 1;
-  SerialDevice testDevice = SerialDevice(settings);
-  testDevice.AddPythonScript("testLedMatrix.py");
-  testDevice.SetActivePythonScript("testLedMatrix.py", true);
-  testDevice.EndScript();
+  std::this_thread::sleep_for(std::chrono::seconds(25));
+
+  pythonHandler.End();
+
   ExitPython();
-  return 1;
+  return 0;
 }
 
-void InitPython() {
+void InitPython()
+{
   Py_SetProgramName(L"python3");
   Py_Initialize();
 }
